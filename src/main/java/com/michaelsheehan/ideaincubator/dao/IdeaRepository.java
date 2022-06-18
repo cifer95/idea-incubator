@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@CrossOrigin({"http://localhost:4200", "http://localhost:8000"})
+@CrossOrigin({"http://localhost:4200", "http://localhost:3000"})
 public interface IdeaRepository extends JpaRepository<Idea, Long> {
 
     Page<Idea> findByStatusId(@RequestParam("id") Long id, Pageable pageable);
