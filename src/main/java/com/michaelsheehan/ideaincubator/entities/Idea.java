@@ -1,7 +1,6 @@
 package com.michaelsheehan.ideaincubator.entities;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -14,7 +13,6 @@ import java.util.Set;
 @Table(name = "ideas")
 @Getter
 @Setter
-@NoArgsConstructor
 public class Idea {
 
     @Id
@@ -63,21 +61,4 @@ public class Idea {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
-
-    public Idea(
-            String ideaName,
-            String anticipatedOutcomes,
-            String situation,
-            String proposedSolution,
-            String stepsInvolved,
-            String benefitsWho,
-            String potentialObstacles) {
-        this.ideaName = ideaName;
-        this.anticipatedOutcomes = anticipatedOutcomes;
-        this.situation = situation;
-        this.proposedSolution = proposedSolution;
-        this.stepsInvolved = stepsInvolved;
-        this.benefitsWho = benefitsWho;
-        this.potentialObstacles = potentialObstacles;
-    }
 }

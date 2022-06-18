@@ -1,7 +1,6 @@
 package com.michaelsheehan.ideaincubator.entities;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -9,7 +8,6 @@ import java.util.Set;
 @Entity
 @Table(name = "idea_resources")
 @Data
-@NoArgsConstructor
 public class IdeaResource {
 
     @Id
@@ -27,8 +25,4 @@ public class IdeaResource {
             inverseJoinColumns = @JoinColumn(name = "idea_id")
     )
     private Set<Idea> ideas;
-
-    public IdeaResource(String resourceName) {
-        this.resourceName = resourceName;
-    }
 }

@@ -1,7 +1,6 @@
 package com.michaelsheehan.ideaincubator.entities;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,7 +10,6 @@ import java.util.Set;
 @Table(name = "idea_categories")
 @Getter
 @Setter
-@NoArgsConstructor
 public class IdeaCategory {
 
     @Id
@@ -29,8 +27,4 @@ public class IdeaCategory {
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private Set<Idea> ideas;
-
-    public IdeaCategory(String categoryName) {
-        this.categoryName = categoryName;
-    }
 }

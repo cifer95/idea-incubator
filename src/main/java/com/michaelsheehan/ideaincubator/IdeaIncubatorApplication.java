@@ -20,25 +20,4 @@ public class IdeaIncubatorApplication {
         SpringApplication.run(IdeaIncubatorApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner run(
-            IdeaCategoryRepository ideaCategoryRepository,
-            IdeaRepository ideaRepository,
-            IdeaResourceRepository ideaResourceRepository,
-            IdeaStatusRepository ideaStatusRepository) {
-        return args -> {
-            ideaCategoryRepository.save(new IdeaCategory("Test Category"));
-
-            ideaStatusRepository.save(new IdeaStatus("Idea Submitted"));
-            ideaStatusRepository.save(new IdeaStatus("Idea Under Revision"));
-            ideaStatusRepository.save(new IdeaStatus("Idea Implemented"));
-            ideaStatusRepository.save(new IdeaStatus("Idea Will not be Implemented"));
-
-            ideaResourceRepository.save(new IdeaResource("Equipment"));
-            ideaResourceRepository.save(new IdeaResource("Printing"));
-
-            ideaRepository.save(new Idea("Test Idea", "Test outcomes", "Test Situation", "Test Solution", "Test Steps", "SAPL", "Test Obstacles"));
-        };
-    }
-
 }

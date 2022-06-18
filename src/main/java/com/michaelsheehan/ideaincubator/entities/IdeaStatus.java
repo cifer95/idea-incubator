@@ -1,7 +1,6 @@
 package com.michaelsheehan.ideaincubator.entities;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,7 +10,6 @@ import java.util.Set;
 @Table(name = "idea_status")
 @Getter
 @Setter
-@NoArgsConstructor
 public class IdeaStatus {
 
     @Id
@@ -24,8 +22,4 @@ public class IdeaStatus {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "status")
     private Set<Idea> ideas;
-
-    public IdeaStatus(String statusName) {
-        this.statusName = statusName;
-    }
 }
