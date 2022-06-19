@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
-import type {Idea} from "@/common/Idea";
+import type {Idea} from "@/common/idea";
 
-const baseUrl = 'http://localhost:8080/api/ideas'
+const baseUrl = 'http://localhost:8080/api/ideas?size=10'
 
 const ideas = ref<Idea[]>([])
 const loadingState = ref<null | string>(null)
