@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
+import type {Idea} from "@/common/Idea";
 
 const baseUrl = 'http://localhost:8080/api/ideas'
 
-const data = ref([])
-const loadingState = ref(null)
+const ideas = ref<Idea[]>([])
+const loadingState = ref<null | string>(null)
 
 onMounted(() => {
   fetchData()
@@ -13,10 +14,10 @@ onMounted(() => {
 const fetchData = () => {
   loadingState.value = 'loading'
   return fetch(baseUrl)
-      .then(response => {
+      .then(response => response.json())
+      .then(data => {
         loadingState.value = 'success'
-        data.value = response.json()
-        console.log(data)
+        ideas.value = data._embedded.ideas
       })
 }
 </script>
@@ -32,6 +33,18 @@ const fetchData = () => {
     <aside>
       <div class="text-center">
         <h2>Newest Ideas</h2>
+      </div>
+      <div v-if="loadingState === 'success'">
+        <ul style="list-style: none">
+          <li v-if="ideas.length > 0" v-for="idea in ideas" :key="idea.id">
+            <h4 v-text="idea.ideaName"></h4>
+            <p v-text="idea.situation"></p>
+            <hr>
+          </li>
+          <li v-else>
+            No ideas.
+          </li>
+        </ul>
       </div>
     </aside>
 
