@@ -23,3 +23,19 @@ img.center {
 .text-center {
   text-align: center;
 }
+
+.block {
+  display: block;
+}
+
+.bottom-border {
+  border-bottom: 1px solid black;
+}
+
+.-ml-2 {
+  margin-left: -2em;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
