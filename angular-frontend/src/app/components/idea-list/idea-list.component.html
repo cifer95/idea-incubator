@@ -1,0 +1,10 @@
+<ul style="list-style: none">
+  <li *ngFor="let idea of ideas">
+    <h4>{{ idea.ideaName }}</h4>
+    <p>{{ idea.situation }}</p>
+  </li>
+
+  <li *ngIf="ideas?.length == 0">
+    <p role="alert">No products found.</p>
+  </li>
+</ul>

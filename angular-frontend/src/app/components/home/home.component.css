@@ -1,0 +1,25 @@
+img.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas: 'newestideas guidelines guidelines';
+  grid-template-columns: 350px 1fr;
+}
+
+.grid > aside {
+  grid-area: newestideas;
+  border-right: 1px solid black;
+}
+
+.grid > #guidelines {
+  grid-area: guidelines;
+  margin-left: 2em;
+}
+
+.text-center {
+  text-align: center;
+}
