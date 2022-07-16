@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Other Frontends ###
+/vue-frontend
+/angular-frontend
